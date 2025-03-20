@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "supersets",
+  "info": {
+    "singularName": "superset",
+    "pluralName": "supersets",
+    "displayName": "Superset"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "exercises": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::exercise.exercise",
+      "inversedBy": "supersets"
+    },
+    "userId": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "supersets"
+    }
+  }
+}
